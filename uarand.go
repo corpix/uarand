@@ -27,7 +27,7 @@ type UARand struct {
 
 // GetRandom returns a random user agent from UserAgents slice.
 func (u *UARand) GetRandom() string {
-	return UserAgents[rand.Intn(len(UserAgents))]
+	return UserAgents[u.Intn(len(UserAgents))]
 }
 
 // GetRandom returns a random user agent from UserAgents slice.
