@@ -1,6 +1,8 @@
 uarand
 ----------------
 
+[![Build Status](https://travis-ci.org/corpix/uarand.svg?branch=master)](https://travis-ci.org/corpix/uarand)
+
 Random user-agent producer for go.
 
 ## Example
