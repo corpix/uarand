@@ -12,6 +12,8 @@ all:: dependencies
 .PHONY: tools
 tools::
 	@if [ ! -e "$(GOPATH)"/bin/glide ]; then go get github.com/Masterminds/glide; fi
+	@if [ ! -e "$(GOPATH)"/bin/glide-cleanup ]; then go get github.com/ngdinhtoan/glide-cleanup; fi
+	@if [ ! -e "$(GOPATH)"/bin/glide-vc ]; then go get github.com/sgotti/glide-vc; fi
 	@if [ ! -e "$(GOPATH)"/bin/godef ]; then go get github.com/rogpeppe/godef; fi
 	@if [ ! -e "$(GOPATH)"/bin/gocode ]; then go get github.com/nsf/gocode; fi
 	@if [ ! -e "$(GOPATH)"/bin/gometalinter ]; then go get github.com/alecthomas/gometalinter && gometalinter --install; fi
@@ -46,3 +48,5 @@ lint:: dependencies
 
 .PHONY: check
 check:: lint test
+
+include useragents.mk

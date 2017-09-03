@@ -1,7 +1,7 @@
 {
     "build_id_generator": "0x$(shell echo $(version) | sha1sum | awk '{print $$1}')",
     "host": "github.com",
-    "include": [],
+    "include": ["useragents.mk"],
     "kind": "package",
     "name": "uarand",
     "tool": [],
