@@ -4,7 +4,7 @@ from os.path import exists, expanduser
 from argparse import ArgumentParser
 
 
-header = """{license}package {package}
+header = """package {package}
 
 var (
 \t// UserAgents is a list of browser and bots user agents.
@@ -29,21 +29,9 @@ if __name__ == "__main__":
         help="Go package name to use",
         default="uarand"
     )
-    p.add_argument(
-        "--license-file",
-        help="Path to the license file",
-        default="LICENSE"
-    )
     args = p.parse_args().__dict__
 
     params = args.copy()
-    params["license"] = ""
-    if exists(args["license_file"]):
-        with open(expanduser(args["license_file"]), "r") as stream:
-                params["license"] = "".join(
-                    ["// "+l for l in stream]
-                )
-
     sys.stderr.write("Reading stdin...\n")
     sys.stdout.write(
         header.format(**params)
