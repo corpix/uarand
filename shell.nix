@@ -8,6 +8,9 @@ stdenv.mkDerivation {
   name = "nix-shell";
   buildInputs = [
     go
+    gcc
+    git
+    gnumake
   ];
   shellHook = ''
     unset GOPATH
