@@ -7,7 +7,7 @@ in with import nixpkgs {};
 stdenv.mkDerivation {
   name = "nix-shell";
   buildInputs = [
-    go golangci-lint
+    go golangci-lint cacert openssl
     gcc git gnumake
   ];
   shellHook = ''
