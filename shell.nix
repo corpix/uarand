@@ -7,10 +7,8 @@ in with import nixpkgs {};
 stdenv.mkDerivation {
   name = "nix-shell";
   buildInputs = [
-    go
-    gcc
-    git
-    gnumake
+    go golangci-lint
+    gcc git gnumake
   ];
   shellHook = ''
     unset GOPATH

@@ -14,7 +14,14 @@ test:
 
 .PHONY: lint
 lint:
-	go vet ./...
+.PHONY: lint
+lint:
+	golangci-lint --color=always                                                       \
+		--exclude='uses unkeyed fields'                                            \
+		--exclude='type .* is unused'                                              \
+		--exclude='should merge variable declaration with assignment on next line' \
+		--deadline=120s                                                            \
+		run ./...
 
 .PHONY: check
 check: lint test
