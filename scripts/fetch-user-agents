@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+set -e
+
+dir=$(dirname "$0")
+curl="curl -Ls -H'User-Agent: gotohellwithyour403'"
+
+$curl http://techpatterns.com/downloads/firefox/useragentswitcher.xml          | $dir/unpack-firefox-user-agent-switcher
+$curl https://github.com/intoli/user-agents/raw/master/src/user-agents.json.gz | $dir/unpack-intoli-user-agents

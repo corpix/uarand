@@ -7,8 +7,8 @@ in with import nixpkgs {};
 stdenv.mkDerivation {
   name = "nix-shell";
   buildInputs = [
+    coreutils bashInteractive jq curl gcc git gnumake
     go golangci-lint cacert openssl
-    gcc git gnumake
   ];
   shellHook = ''
     unset GOPATH

@@ -37,10 +37,14 @@ if __name__ == "__main__":
         header.format(**params)
     )
 
+    raw_items = []
     for line in sys.stdin:
+        raw_items.append(line.strip())
+
+    for raw_item in sorted(list(set(raw_items))):
         sys.stdout.write(
             item.format(
-                content=line.strip(),
+                content=raw_item,
                 **params
             )
         )
