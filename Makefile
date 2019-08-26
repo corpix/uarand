@@ -1,7 +1,5 @@
 .DEFAULT_GOAL = all
 
-version  := $(shell git rev-list --count HEAD).$(shell git rev-parse --short HEAD)
-
 name     := uarand
 package  := github.com/corpix/$(name)
 
