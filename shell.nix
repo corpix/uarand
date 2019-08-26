@@ -1,7 +1,7 @@
 let
   nixpkgs = builtins.fetchTarball {
-    url    = "https://github.com/nixos/nixpkgs/archive/03050e9749e1548f1648aae5c062c954eaad546e.tar.gz";
-    sha256 = "00hfkldmf853ynnd8a9d7a778ifcrdjxdndxyykzbpxfki5s5qsb";
+    url    = "https://github.com/nixos/nixpkgs/archive/ddf38a8241089d79c3bcd1777781b6438ab88d84.tar.gz";
+    sha256 = "0fjk69mn58h0gjzgxgnkfkhhf1l707bg2cn4823ma9xbjxbhl0ya";
   };
 in with import nixpkgs {};
 stdenv.mkDerivation {
@@ -12,5 +12,6 @@ stdenv.mkDerivation {
   ];
   shellHook = ''
     unset GOPATH
+    export NIX_PATH=nixpkgs=${nixpkgs}
   '';
 }
